@@ -1,0 +1,24 @@
+<!-- assignment.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Öğrenci Atama</title>
+</head>
+<body>
+    <h1>Öğrenci Atama</h1>
+    <p>Bu sayfa yalnızca yöneticiler içindir. Aşağıdaki düğmeye basarak öğrenci atama işlemini başlatabilirsiniz.</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Atama İşlemini Başlat</button>
+    </form>
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
